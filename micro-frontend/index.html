@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GrowTogether - Empowering Communities Through Microfinance</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        a {
+            text-decoration: none;
+            color: #0078d4;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        /* Header */
+        header {
+            background-color: #fff;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #006400;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 30px;
+        }
+        
+        nav ul li a {
+            font-weight: 500;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: #006400;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-weight: 500;
+            transition: background-color 0.3s;
+        }
+        
+        .btn:hover {
+            background-color: #004d00;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('/api/placeholder/1200/500');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+        
+        .hero p {
+            font-size: 20px;
+            max-width: 800px;
+            margin: 0 auto 30px;
+        }
+        
+        /* What is Microfinance */
+        .what-is {
+            padding: 80px 0;
+            background-color: #f9f9f9;
+        }
+        
+        .what-is h2 {
+            font-size: 36px;
+            text-align: center;
+            margin-bottom: 50px;
+            color: #006400;
+        }
+        
+        .info-cards {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+        
+        .info-card {
+            flex: 1 1 300px;
+            background-color: white;
+            border-radius: 5px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            padding: 30px;
+            transition: transform 0.3s;
+        }
+        
+        .info-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .info-card h3 {
+            font-size: 24px;
+            margin-bottom: 15px;
+            color: #006400;
+        }
+        
+        /* Our Approach */
+        .our-approach {
+            padding: 80px 0;
+        }
+        
+        .our-approach h2 {
+            font-size: 36px;
+            text-align: center;
+            margin-bottom: 50px;
+            color: #006400;
+        }
+        
+        .approach-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+            gap: 50px;
+        }
+        
+        .approach-item {
+            display: flex;
+            align-items: flex-start;
+        }
+        
+        .approach-icon {
+            background-color: #e6f2e6;
+            color: #006400;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 20px;
+            flex-shrink: 0;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        
+        .approach-content h3 {
+            font-size: 24px;
+            margin-bottom: 10px;
+            color: #006400;
+        }
+        
+        /* Impact */
+        .impact {
+            padding: 80px 0;
+            background-color: #f9f9f9;
+            text-align: center;
+        }
+        
+        .impact h2 {
+            font-size: 36px;
+            margin-bottom: 50px;
+            color: #006400;
+        }
+        
+        .stats {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin-bottom: 50px;
+        }
+        
+        .stat {
+            flex: 1 1 200px;
+            margin: 20px;
+        }
+        
+        .stat-number {
+            font-size: 48px;
+            font-weight: bold;
+            color: #006400;
+            margin-bottom: 10px;
+        }
+        
+        /* Success Stories */
+        .success-stories {
+            padding: 80px 0;
+        }
+        
+        .success-stories h2 {
+            font-size: 36px;
+            text-align: center;
+            margin-bottom: 50px;
+            color: #006400;
+        }
+        
+        .stories {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+        
+        .story {
+            flex: 1 1 350px;
+            background-color: white;
+            border-radius: 5px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        
+        .story-image {
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .story-content {
+            padding: 20px;
+        }
+        
+        .story h3 {
+            font-size: 24px;
+            margin-bottom: 10px;
+            color: #006400;
+        }
+        
+        .quote {
+            font-style: italic;
+            margin-bottom: 15px;
+            border-left: 3px solid #006400;
+            padding-left: 15px;
+        }
+        
+        /* Get Involved */
+        .get-involved {
+            padding: 80px 0;
+            background-color: #006400;
+            color: white;
+            text-align: center;
+        }
+        
+        .get-involved h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+        
+        .get-involved p {
+            max-width: 800px;
+            margin: 0 auto 30px;
+            font-size: 18px;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .cta-btn {
+            display: inline-block;
+            padding: 12px 25px;
+            border-radius: 5px;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+        
+        .primary-btn {
+            background-color: white;
+            color: #006400;
+        }
+        
+        .primary-btn:hover {
+            background-color: #f0f0f0;
+        }
+        
+        .secondary-btn {
+            background-color: transparent;
+            border: 2px solid white;
+            color: white;
+        }
+        
+        .secondary-btn:hover {
+            background-color: rgba(255,255,255,0.1);
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 50px 0 20px;
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-column {
+            flex: 1 1 200px;
+        }
+        
+        .footer-column h3 {
+            font-size: 20px;
+            margin-bottom: 20px;
+            color: #88c488;
+        }
+        
+        .footer-column ul {
+            list-style: none;
+        }
+        
+        .footer-column ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-column ul li a {
+            color: #ccc;
+            transition: color 0.3s;
+        }
+        
+        .footer-column ul li a:hover {
+            color: white;
+        }
+        
+        .copyright {
+            text-align: center;
+            border-top: 1px solid #555;
+            padding-top: 20px;
+            color: #888;
+        }
+        
+        /* Media Queries */
+        @media (max-width: 768px) {
+            nav {
+                display: none;
+            }
+            
+            .hero h1 {
+                font-size: 36px;
+            }
+            
+            .approach-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .info-cards, .stats, .stories {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">GrowTogether</div>
+                <nav>
+                    <ul>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#approach">Our Approach</a></li>
+                        <li><a href="#impact">Our Impact</a></li>
+                        <li><a href="#stories">Success Stories</a></li>
+                        <li><a href="#donate" class="btn">Donate</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Empowering Communities Through Microfinance</h1>
+            <p>Providing access to financial services for those who need it most. Together, we can break the cycle of poverty through small-scale financial solutions.</p>
+            <a href="#approach" class="btn">Learn About Our Approach</a>
+        </div>
+    </section>
+
+    <!-- What is Microfinance -->
+    <section class="what-is" id="about">
+        <div class="container">
+            <h2>What is Microfinance?</h2>
+            <div class="info-cards">
+                <div class="info-card">
+                    <h3>The Basics</h3>
+                    <p>Microfinance offers banking services to unemployed and low-income individuals who have no other means of accessing financial products. Microfinance services typically include small loans, savings accounts, insurance, and money transfers.</p>
+                </div>
+                <div class="info-card">
+                    <h3>Breaking the Cycle</h3>
+                    <p>By providing entrepreneurs and small businesses with access to capital and training, microfinance helps break the cycle of poverty. These resources enable communities to develop their own solutions and build sustainable futures.</p>
+                </div>
+                <div class="info-card">
+                    <h3>Beyond Loans</h3>
+                    <p>Modern microfinance goes beyond just providing credit. It includes comprehensive financial education, business development services, and community support systems to ensure long-term success and economic resilience.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Approach -->
+    <section class="our-approach" id="approach">
+        <div class="container">
+            <h2>Our Microfinance Approach</h2>
+            <div class="approach-grid">
+                <div class="approach-item">
+                    <div class="approach-icon">1</div>
+                    <div class="approach-content">
+                        <h3>Community-Based Lending</h3>
+                        <p>We work through local community groups to administer loans, providing both accountability and support. This model leverages existing social structures and builds upon community trust.</p>
+                    </div>
+                </div>
+                <div class="approach-item">
+                    <div class="approach-icon">2</div>
+                    <div class="approach-content">
+                        <h3>Business Training</h3>
+                        <p>Loan recipients receive comprehensive business training, covering topics from basic accounting to marketing strategies. These skills help ensure the sustainability of their ventures.</p>
+                    </div>
+                </div>
+                <div class="approach-item">
+                    <div class="approach-icon">3</div>
+                    <div class="approach-content">
+                        <h3>Savings Programs</h3>
+                        <p>We encourage and facilitate savings programs among our clients, promoting financial resilience and providing a safety net for emergencies and future investments.</p>
+                    </div>
+                </div>
+                <div class="approach-item">
+                    <div class="approach-icon">4</div>
+                    <div class="approach-content">
+                        <h3>Women's Empowerment</h3>
+                        <p>We place special emphasis on supporting women entrepreneurs, recognizing their crucial role in community development and their historical lack of access to traditional financial services.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Impact -->
+    <section class="impact" id="impact">
+        <div class="container">
+            <h2>Our Impact</h2>
+            <div class="stats">
+                <div class="stat">
+                    <div class="stat-number">2.4M+</div>
+                    <p>Lives impacted across 27 countries</p>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">98%</div>
+                    <p>Loan repayment rate</p>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">75%</div>
+                    <p>Of clients are women</p>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">$250</div>
+                    <p>Average loan size</p>
+                </div>
+            </div>
+            <p>Since our founding in 2005, GrowTogether has disbursed over $420 million in microloans, helping create sustainable businesses and improve living conditions for millions of people in vulnerable communities.</p>
+        </div>
+    </section>
+
+    <!-- Success Stories -->
+    <section class="success-stories" id="stories">
+        <div class="container">
+            <h2>Success Stories</h2>
+            <div class="stories">
+                <div class="story">
+                    <div class="story-image" style="background-image: url('/api/placeholder/350/200');"></div>
+                    <div class="story-content">
+                        <h3>Maria's Textile Workshop</h3>
+                        <div class="quote">"With my first loan of $150, I purchased a sewing machine. Now I employ five women from my village and supply textiles to three nearby towns."</div>
+                        <p>Maria used three successive microloans to build her business from a single sewing machine to a small workshop that provides sustainable income for multiple families in her community.</p>
+                    </div>
+                </div>
+                <div class="story">
+                    <div class="story-image" style="background-image: url('/api/placeholder/350/200');"></div>
+                    <div class="story-content">
+                        <h3>Farmers Cooperative</h3>
+                        <div class="quote">"Our cooperative used the loan to purchase irrigation equipment. Our crop yields have increased by 60%, allowing us to send our children to school."</div>
+                        <p>A group of 15 small-scale farmers pooled their microloans to invest in shared infrastructure, dramatically improving their productivity and market access.</p>
+                    </div>
+                </div>
+                <div class="story">
+                    <div class="story-image" style="background-image: url('/api/placeholder/350/200');"></div>
+                    <div class="story-content">
+                        <h3>Ahmed's Mobile Repair</h3>
+                        <div class="quote">"I learned electronics repair through an online course and started my business with just $200. Now I have my own shop and train young people in my community."</div>
+                        <p>Ahmed's story demonstrates how microfinance can help bridge the digital divide, creating technology-focused entrepreneurs in underserved areas.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Get Involved -->
+    <section class="get-involved">
+        <div class="container">
+            <h2>Join Our Mission</h2>
+            <p>Your support can help entrepreneurs around the world build better futures for themselves, their families, and their communities. There are many ways to get involved.</p>
+            <div class="cta-buttons">
+                <a href="#donate" class="cta-btn primary-btn">Donate Now</a>
+                <a href="#volunteer" class="cta-btn secondary-btn">Become a Volunteer</a>
+                <a href="#partner" class="cta-btn secondary-btn">Partnership Opportunities</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>GrowTogether</h3>
+                    <p>Empowering communities through sustainable microfinance solutions since 2005.</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#approach">Our Approach</a></li>
+                        <li><a href="#impact">Our Impact</a></li>
+                        <li><a href="#stories">Success Stories</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Get Involved</h3>
+                    <ul>
+                        <li><a href="#donate">Donate</a></li>
+                        <li><a href="#volunteer">Volunteer</a></li>
+                        <li><a href="#partner">Partner With Us</a></li>
+                        <li><a href="#careers">Careers</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <ul>
+                        <li><a href="mailto:info@growtogether.org">info@growtogether.org</a></li>
+                        <li><a href="tel:+1234567890">+1 (234) 567-890</a></li>
+                        <li>123 Impact Street, Global City</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 GrowTogether. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
